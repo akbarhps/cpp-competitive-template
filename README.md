@@ -65,8 +65,7 @@ Or for shortcut press:
 ```c++
 int main()
 {
-    V<LL> vec = InVec<LL>(5);
-    SortVec(vec);
+    Vec<LL> vec = InVec<LL>(5);
     OutVec(vec);
 }
 ```
