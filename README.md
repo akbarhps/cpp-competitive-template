@@ -53,4 +53,21 @@ Or for shortcut press:
 - Note:
     - `Abbreviation` is the snippet name
     
+### Other Code Editor that doesn't support Snippet
+
+1. Open file `template > template-v1.cpp` or choose higher version
+2. Copy all
+3. Paste in `src > main.cpp`
+
+## How To Use
+
+```c++
+int main()
+{
+    V<LL> vec = InVec<LL>(5);
+    SortVec(vec);
+    OutVec(vec);
+}
+```
+    
 ---

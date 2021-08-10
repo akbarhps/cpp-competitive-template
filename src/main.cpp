@@ -94,7 +94,7 @@ TType inline V<T> InVec(CTR<T> n)
 
 int main()
 {
-    V<int> vec = InVec(5);
+    V<LL> vec = InVec<LL>(5);
     SortVec(vec);
     OutVec(vec);
 }
