@@ -1,9 +1,11 @@
 /**
  * Created by akbar on 8/10/2021.
+ * https://github.com/akbarhps/cpp-competitive-template
  */
 
-// bits/stdc++ only support cpp 14 or less
 //#include <bits/stdc++.h>
+// bits/stdc++ is not std lib
+// some compiler wont work
 
 #include <iostream>
 #include <vector>
@@ -16,6 +18,7 @@ using namespace std;
 
 // typedef
 #define TType template <typename T>
+#define TUType template <typename T, typename U>
 
 typedef long L;
 typedef unsigned U;
@@ -23,78 +26,60 @@ typedef long long LL;
 typedef unsigned long UL;
 typedef unsigned long long ULL;
 
-TType using V = vector<T>;
-TType using CTR = const T &;
+TType using Vec = vector<T>;
 
-/**
- * loop
- * @param i index
- * @param x start value
- * @param n finish value
- *
- * d means decrement
- * w means while
- * gt means greater than
- */
-#define Each(i, x) for (auto &i : x)
-#define For(i, x, n) for (size_t i = x; i < n; ++i)
-#define ForD(i, x, n) for (size_t i = x - 1; i >= n; i--)
-#define For0(i, n) For(i, 0, n)
-#define ForD0(i, n) ForD(i, n, 0)
-#define WGT(x, y) while (x > y)
-#define WGT0(x) while (x > 0)
-#define WD(x) while (x--)
-#define WDGT(x, y) while (x-- > y)
+// loop
+#define Each(element, iterable) for (auto &element : iterable)
+#define For(index, from, to) for (size_t index = from; index < to; index++)
+#define ForDec(index, from, to) for (size_t index = from - 1; index >= to; index--)
+#define For_(index, to) For(index, 0, to)
+#define ForDec_(index, to) ForDec(index, to, 0)
+#define WDec(index) while (index--)
 
 // util
 #define Push push_back
 #define Pop pop_back
-#define Len length
-#define Beg(v) v.begin()
-#define End(v) v.end()
-#define All(v) Beg(v), End(v)
-#define ArrSize(x) sizeof(x) / sizeof(x[0])
-#define Sqr(x) (ll)(x * x)
-#define SqrM(x, mod) (ll)(x * x) % mod
-#define Eq(x, y) x == y
-#define Clear(x) Each(i, x) i = 0
-#define Fill(x, n, v) For0(i, n) x.Push(v)
+#define Beg(vec) vec.begin()
+#define End(vec) vec.end()
+#define Sqr(var) (ll)(var * var)
+#define SqrM(var, mod) (ll)((var * var) % mod)
+#define Eq(var1, var2) var1 == var2
+
+#define Clear(iterable) Each(element, iterable) element = 0
+#define Fill(iterable, length, value) Each(element, iterable) element = value
+
+#define VecAll(vec) Beg(vec), End(vec)
+#define ArrSize(arr) sizeof(arr) / sizeof(arr[0])
+
+// std::sort
+#define SortArr(arr) sort(arr, arr + ArrSize(arr))
+#define SortArrDec(arr) sort(arr, arr + ArrSize(arr), greater<>())
+#define SortVec(vec) sort(VecAll(vec))
+#define SortVecDec(vec) sort(VecAll(vec), greater<>())
 
 // stream
-#define In(x) cin >> x
-#define Out(x) cout << x << endl
-#define InArr(x, n) For0(i, n) In(x[i])
-#define OutArr(x) Each(i, x) Out(i)
-#define OutVec(x) OutArr(x)
+#define In(var) cin >> var
+#define In2(var1, var2) cin >> var1 >> var2
+#define Out(var) cout << var << endl
+#define Out2(var1, var2) cout << var1 << " " << var2 << endl
+#define InArr(arr, length) Each(element, arr) In(element)
+#define OutArr(arr) Each(element, arr) Out(element)
+#define OutVec(arr) OutArr(arr)
 
-TType inline V<T> InVec(CTR<T> n)
+TType inline Vec<T> InVec(const size_t &size)
 {
-    V<T> v;
-    For0(i, n)
+    Vec<T> vector;
+    For_(index, size)
     {
         T e;
         In(e);
-        v.Push(e);
+        vector.Push(e);
     }
-    return v;
+    return vector;
 }
-
-/**
- * std::sort
- * @param x array or vector to sort
- *
- * A means array
- * D means decrement
- * V mean vector
- */
-#define SortArr(x) sort(x, x + ArrSize(x))
-#define SortArrD(x) sort(x, x + ArrSize(x), greater<>())
-#define SortVec(x) sort(All(x))
-#define SortVecD(x) sort(All(x), greater<>())
 
 int main()
 {
-    V<LL> vec = InVec<LL>(5);
-    SortVec(vec);
+    Vec<LL> vec = InVec<LL>(5);
     OutVec(vec);
 }
