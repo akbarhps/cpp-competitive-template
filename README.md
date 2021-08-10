@@ -23,6 +23,10 @@ Note:
 - `Default tasks.json` only work using `gcc compiler` and `windows`
 - If you're using compiler `older` than `c++17` just comment `"-std=c++17"`
 
+### CLion
+
+- CLion will automatically detect CMakeLists.txt file
+
 ## Snippet
 
 ### Visual Studio Code
