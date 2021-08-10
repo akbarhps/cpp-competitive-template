@@ -53,9 +53,6 @@ Or for shortcut press:
 9. Click OK
 10. Open file `src > main.cpp`
 11. Type `init-v1` or the `Abbreviation` you give, then you hit `tab`/`enter`
-
-- Note:
-    - `Abbreviation` is the snippet name
     
 ### Other Code Editor that doesn't support Snippet
 
