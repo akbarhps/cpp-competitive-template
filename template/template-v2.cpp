@@ -243,39 +243,6 @@ inline void Print(const map<T, U> &map) {
 //======================================         END         ========================================//
 //===================================================================================================//
 
-struct Vector3 {
-    int x;
-    string y;
-
-    Vector3(int &x, string &y) : x(x), y(y) {}
-};
-
 int main() {
-    vector<Vector3> vec;
-    Scan<Vector3, int, string>(vec, 3);
-    Each(e, vec) {
-        Print(e.x, e.y);
-    }
 
-    // this will print as array because you passing
-    // const char *
-    Print("hi there");
-    /**
-     * h
-     * i
-     *
-     * t
-     * h
-     * e
-     * r
-     * e
-     */
-
-    // use PrintStr instead
-    PrintStr("hi there"); // hi there
-
-    // but this works if you specify the type
-    string a = "hi there";
-    Print(a); // hi there
-    Print(string("hi there")); // hi there
 }

@@ -17,9 +17,10 @@
 1. Open `.vscode > c_cpp_properties.json`
 2. Set your `compiler path` there
 3. Open `tasks.json` file
-4. Customize your command there 
+4. Customize your command there
 
-Note:  
+Note:
+
 - `Default tasks.json` only work using `gcc compiler` and `windows`
 - If you're using compiler `older` than `c++17` just comment `"-std=c++17"`
 
@@ -30,43 +31,74 @@ Note:
 ## Snippet
 
 ### Visual Studio Code
-1. Open file `src > main.cpp`
-2. Simply write `init-v1` then hit `enter`
 
-- Note:  
+1. Open file `src > main.cpp`
+2. Simply write `init` then hit `enter`
+
+- Note:
     - Visual studio code automatically import `.code-snippets` file
     - if you want to customize the snippet, open `.vscode/template.code-snippets`
 
 ### CLion
 
-1. Open file `template > template-v1.cpp` or choose higher version
+1. Open file `template > template-v2.cpp` or choose higher version
 2. Copy all
 3. Open `File > Settings`
 4. Navigate to `Editor > Live Templates`
 5. Click `+` icon, then click `Live Template`  
-Or for shortcut press:
+   Or for shortcut press:
     - Windows/Linux (maybe): `alt + insert`
     - Mac: `ctrl + enter`
-6. Change `Abbreviation` to `init-v1` or whatever you want to call it
+6. Change `Abbreviation` to `init` or whatever you want to call it
 7. Paste template to `Template Text`
 8. If you see `No applicable contexts` click `define` then choose `C++`
 9. Click OK
 10. Open file `src > main.cpp`
-11. Type `init-v1` or the `Abbreviation` you give, then you hit `tab`/`enter`
-    
+11. Type `init` or the `Abbreviation` you give, then you hit `tab`/`enter`
+
 ### Other Code Editor that doesn't support Snippet
 
-1. Open file `template > template-v1.cpp` or choose higher version
+1. Open file `template > template-v2.cpp` or choose higher version
 2. Copy all
 3. Paste in `src > main.cpp`
 
 ## How To Use
 
 ```c++
-int main()
-{
-    Vec<LL> vec = InVec<LL>(5);
-    OutVec(vec);
+struct Vector3 {
+    int x;
+    string y;
+
+    Vector3(int &x, string &y) : x(x), y(y) {}
+};
+
+int main() {
+    vector<Vector3> vec;
+    Scan<Vector3, int, string>(vec, 3);
+    Each(e, vec) {
+        Print(e.x, e.y);
+    }
+
+    // this will print as array because you passing
+    // const char *
+    Print("hi there");
+    /**
+     * h
+     * i
+     * 
+     * t
+     * h
+     * e
+     * r
+     * e
+     */
+    
+    // use PrintStr instead
+    PrintStr("hi there"); // hi there
+    
+    string a = "hi there";
+    Print(a); // hi there
+    Print(string("hi there")); // hi there
 }
 ```
     
