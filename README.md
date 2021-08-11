@@ -66,39 +66,18 @@ Note:
 
 ```c++
 struct Vector3 {
-    int x;
-    string y;
+    int x, y, z;
 
-    Vector3(int &x, string &y) : x(x), y(y) {}
+    Vector3(int x, int y, int z) : x(x), y(y), z(z) {}
 };
 
 int main() {
+    SetIO;
     vector<Vector3> vec;
-    Scan<Vector3, int, string>(vec, 3);
+    Scan<Vector3, int, int, int>(vec, 3);
     Each(e, vec) {
-        Print(e.x, e.y);
+        Print(e.x, e.y, e.z);
     }
-
-    // this will print as array because you passing
-    // const char *
-    Print("hi there");
-    /**
-     * h
-     * i
-     * 
-     * t
-     * h
-     * e
-     * r
-     * e
-     */
-    
-    // use PrintStr instead
-    PrintStr("hi there"); // hi there
-    
-    string a = "hi there";
-    Print(a); // hi there
-    Print(string("hi there")); // hi there
 }
 ```
     
