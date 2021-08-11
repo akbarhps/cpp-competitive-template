@@ -34,9 +34,9 @@ using Ref = reference_wrapper<T>;
 //======================================         LOOP         =======================================//
 //===================================================================================================//
 
-#define For(index, from, to) for (size_t (index) = (from); (index) < (to); (index)++)
+#define For(index, from, to) for (int (index) = (from); (index) < (to); (index)++)
 #define For_(index, to) For(index, 0, to)
-#define ForDec(index, from, to) for (size_t index = (from) - 1; (index) >= (to); (index)--)
+#define ForDec(index, from, to) for (int (index) = (from) - 1; (index) >= (to); (index)--)
 #define ForDec_(index, from) ForDec(index, from, 0)
 #define WDec(index) while ((index)--)
 #define Each(element, iterable) for (auto &(element) : (iterable))
